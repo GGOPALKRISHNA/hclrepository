@@ -1,0 +1,8 @@
+version: "3.8"
+services: 
+  gopalhcl:
+   image: gopalhcl:appv1
+   build: .
+   container_name: gopalc111
+   ports: 
+   - 1236:80
