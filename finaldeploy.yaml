@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gopalfinal-deploy
+  name: gopalfinal-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gopalfinal-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gopalfinal-deploy
+    spec:
+      containers:
+      - image: docker.io/gg647262/gopalhcl:final
+        name: gg647262
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        resources: {}
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gopalfinal-deploy
+  name: gopallb1236
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: gopalfinal-deploy
+  type: NodePort
+status:
+  loadBalancer: {}
