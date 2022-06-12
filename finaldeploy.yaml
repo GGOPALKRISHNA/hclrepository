@@ -5,6 +5,7 @@ metadata:
   labels:
     app: gopalfinal-deploy
   name: gopalfinal-deploy
+  namespace: gopal-project
 spec:
   replicas: 1
   selector:
@@ -35,6 +36,7 @@ metadata:
   labels:
     app: gopalfinal-deploy
   name: gopallb1236
+  namespace: gopal-project
 spec:
   ports:
   - port: 80
